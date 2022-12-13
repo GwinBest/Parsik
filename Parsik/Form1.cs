@@ -7,9 +7,9 @@ using System.Data;
 
 namespace Parsik
 {
-    public partial class Form1 : Form
+    public partial class Parser : Form
     {
-        public Form1()
+        public Parser()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Parsik
 {
-    partial class Form1
+    partial class Parser
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Parser));
             this.buttonGetInitials = new System.Windows.Forms.Button();
             this.buttonCompare = new System.Windows.Forms.Button();
             this.comboBoxGroups = new System.Windows.Forms.ComboBox();
@@ -37,21 +38,15 @@
             // 
             // buttonGetInitials
             // 
-            this.buttonGetInitials.Location = new System.Drawing.Point(60, 72);
+            resources.ApplyResources(this.buttonGetInitials, "buttonGetInitials");
             this.buttonGetInitials.Name = "buttonGetInitials";
-            this.buttonGetInitials.Size = new System.Drawing.Size(75, 23);
-            this.buttonGetInitials.TabIndex = 0;
-            this.buttonGetInitials.Text = "button1";
             this.buttonGetInitials.UseVisualStyleBackColor = true;
             this.buttonGetInitials.Click += new System.EventHandler(this.buttonGetInitials_Click);
             // 
             // buttonCompare
             // 
-            this.buttonCompare.Location = new System.Drawing.Point(236, 72);
+            resources.ApplyResources(this.buttonCompare, "buttonCompare");
             this.buttonCompare.Name = "buttonCompare";
-            this.buttonCompare.Size = new System.Drawing.Size(75, 23);
-            this.buttonCompare.TabIndex = 1;
-            this.buttonCompare.Text = "button1";
             this.buttonCompare.UseVisualStyleBackColor = true;
             this.buttonCompare.Click += new System.EventHandler(this.buttonCompare_Click);
             // 
@@ -60,45 +55,38 @@
             this.comboBoxGroups.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxGroups.FormattingEnabled = true;
             this.comboBoxGroups.Items.AddRange(new object[] {
-            "250504",
-            "250505",
-            "250701",
-            "250702"});
-            this.comboBoxGroups.Location = new System.Drawing.Point(483, 41);
+            resources.GetString("comboBoxGroups.Items"),
+            resources.GetString("comboBoxGroups.Items1"),
+            resources.GetString("comboBoxGroups.Items2"),
+            resources.GetString("comboBoxGroups.Items3")});
+            resources.ApplyResources(this.comboBoxGroups, "comboBoxGroups");
             this.comboBoxGroups.Name = "comboBoxGroups";
-            this.comboBoxGroups.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxGroups.TabIndex = 2;
             this.comboBoxGroups.SelectedIndexChanged += new System.EventHandler(this.comboBoxGroups_SelectedIndexChanged);
             // 
             // checkedListBoxInitials
             // 
+            resources.ApplyResources(this.checkedListBoxInitials, "checkedListBoxInitials");
             this.checkedListBoxInitials.FormattingEnabled = true;
-            this.checkedListBoxInitials.Location = new System.Drawing.Point(29, 153);
             this.checkedListBoxInitials.Name = "checkedListBoxInitials";
-            this.checkedListBoxInitials.Size = new System.Drawing.Size(249, 225);
-            this.checkedListBoxInitials.TabIndex = 3;
             this.checkedListBoxInitials.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxInitials_SelectedIndexChanged);
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(404, 137);
+            resources.ApplyResources(this.richTextBox1, "richTextBox1");
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(323, 279);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "";
             // 
-            // Form1
+            // Parser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 508);
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.checkedListBoxInitials);
             this.Controls.Add(this.comboBoxGroups);
             this.Controls.Add(this.buttonCompare);
             this.Controls.Add(this.buttonGetInitials);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.Name = "Parser";
             this.ResumeLayout(false);
 
         }
