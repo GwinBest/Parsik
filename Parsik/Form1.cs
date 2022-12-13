@@ -4,7 +4,6 @@ using MySql.Data.MySqlClient;
 using AngleSharp;
 using Octokit;
 using System.Data;
-using System.Data.Common;
 
 namespace Parsik
 {
@@ -17,63 +16,37 @@ namespace Parsik
 
         private void buttonGetInitials_Click(object sender, EventArgs e)
         {
+            DataBase dataBase = new DataBase();
+
+            DataTable table = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
             if (comboBoxGroups.Text.ToString() == "250504")
             {
-                DataBase dataBase = new DataBase();
-
-                DataTable table = new DataTable();
-
-                MySqlDataAdapter adapter = new MySqlDataAdapter();
-
                 MySqlCommand command = new MySqlCommand("SELECT * FROM students.`250504`", dataBase.getConnection());
-                
                 adapter.SelectCommand= command;
-                adapter.Fill(table);
-                checkedListBoxInitials.DataSource = table;
-                checkedListBoxInitials.DisplayMember = table.Columns[0].ToString();
-                checkedListBoxInitials.ValueMember = table.Columns[1].ToString();
-
-
-
-                /*List<Students> students250504 = new List<Students>();
-                students250504.Add(new Students() { name = "Василевич Дмитрий Викторович", gitHub = "gexgener1l/vasilevich-oaip" });
-                students250504.Add(new Students() { name = "Закоркин Илья Денисович", gitHub = "Ilyas-12345/Projects.For.Laboratory" });
-                students250504.Add(new Students() { name = "Кабачевский Дмитрий Вячеславович", gitHub = "KabacheuskyDmitry/OAiP" });
-                students250504.Add(new Students() { name = "Кароткая Полина Сергеевна", gitHub = "whitedragon077/karotkaya_oaip" });
-                students250504.Add(new Students() { name = "Кольянов Илья Дмитриевич", gitHub = "Krame1S/OAiP-Kolyanov" });
-                students250504.Add(new Students() { name = "Лагодич Илья Романович", gitHub = "elegardooo/OAIP" });
-                students250504.Add(new Students() { name = "Моисеев Владислав Сергеевич", gitHub = "vladmoiseev/vladislavmoiseev-p" });
-                students250504.Add(new Students() { name = "Солодков Максим Дмитриевич", gitHub = "MaximSolodkovVMSIS/MaximSolodkov" });
-                students250504.Add(new Students() { name = "Таврель Максим Дмитриевич", gitHub = "Maksentiu/Ksis" });
-                students250504.Add(new Students() { name = "Телешов Андрей Витальевич", gitHub = "TeleshovAndrey/MyHome" });
-                students250504.Add(new Students() { name = "Хвесько Павел Сергеевич", gitHub = "PahanHvesco/OAiP" });
-                students250504.Add(new Students() { name = "Шалль Герман Эдуардович", gitHub = "gerushenka/gerazitory" });
-                students250504.Add(new Students() { name = "Шимчик Михаил Викторович", gitHub = "mishashim10/desktop-tutorial" });
-                students250504.Add(new Students() { name = "Щербо Павел Андреевич", gitHub = "Pavel-Shcherbo/bsuir" });
-                students250504.Add(new Students() { name = "Яцкевич Александр Дмитриевич", gitHub = "Alexandr022/Alexandr-Yatskevich-250504" });
-                students250504.Add(new Students() { name = "Алхава Руслан Абдулькаримович", gitHub = "Willygodx/Ruslan" });
-                students250504.Add(new Students() { name = "Антоненко Александр Владимирович", gitHub = "a9ek0/antonenko" });
-                students250504.Add(new Students() { name = "Бойко Роман Сергеевич", gitHub = "NiRRiT33/1" });
-                students250504.Add(new Students() { name = "Борисевич Матвей Игоревич", gitHub = "GwinBest/oaip" });
-                students250504.Add(new Students() { name = "Вильчинский Вадим Сергеевич", gitHub = "Vadimvill/OAIP" });
-                students250504.Add(new Students() { name = "Гутковский Артем Сергеевич", gitHub = "GutkovskiyArtem/OAiP-250504.git" });
-                students250504.Add(new Students() { name = "Дмитриев Павел Андреевич", gitHub = "gklf-pixel/Dpavel" });
-                students250504.Add(new Students() { name = "Казаченко Павел Евгеньевич", gitHub = "mxrpheus6/OAiP" });
-                students250504.Add(new Students() { name = "Мальченко Артём Евгеньевич", gitHub = "artem-00/AOiP_Mal" });
-                students250504.Add(new Students() { name = "Манько Иван Кириллович", gitHub = "vanyamanko/Ivan-Manko" });
-                students250504.Add(new Students() { name = "Пигулевский Константин Сергеевич", gitHub = "bagggage/bsuir-labs" });
-                students250504.Add(new Students() { name = "Савицкий Михаил Александрович", gitHub = "Awrdo/OAiP-250504-" });
-                students250504.Add(new Students() { name = "Слинько Артём Геннадьевич", gitHub = "artemslinko/-" });
-                students250504.Add(new Students() { name = "Спасёнов Юрий Леонидович", gitHub = "sefin123/repository-s-sefin" });
-                students250504.Add(new Students() { name = "Тарбаев Дмитрий Сергеевич", gitHub = "Cupru-m/-" });
-                checkedListBoxInitials.DataSource = students250504;
-                checkedListBoxInitials.DisplayMember = "name";
-                checkedListBoxInitials.ValueMember = "gitHub";*/
+            }
+            else if(comboBoxGroups.Text.ToString() == "250505")
+            {
+                MySqlCommand command = new MySqlCommand("SELECT * FROM students.`250505`", dataBase.getConnection());
+                adapter.SelectCommand = command;
+            }
+            else if (comboBoxGroups.Text.ToString() == "250701")
+            {
+                MySqlCommand command = new MySqlCommand("SELECT * FROM students.`250701`", dataBase.getConnection());
+                adapter.SelectCommand = command;
             }
             else
             {
-                checkedListBoxInitials.DataSource = null;
-            }
+                MySqlCommand command = new MySqlCommand("SELECT * FROM students.`250702`", dataBase.getConnection());
+                adapter.SelectCommand = command;
+            }    
+
+            adapter.Fill(table);
+            checkedListBoxInitials.DataSource = table;
+            checkedListBoxInitials.DisplayMember = table.Columns[0].ToString();
+            checkedListBoxInitials.ValueMember = table.Columns[1].ToString();
         }
 
         private async void buttonCompare_Click(object sender, EventArgs e)
