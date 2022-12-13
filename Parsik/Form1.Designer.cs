@@ -73,7 +73,7 @@
             // checkedListBoxInitials
             // 
             this.checkedListBoxInitials.FormattingEnabled = true;
-            this.checkedListBoxInitials.Location = new System.Drawing.Point(15, 137);
+            this.checkedListBoxInitials.Location = new System.Drawing.Point(29, 153);
             this.checkedListBoxInitials.Name = "checkedListBoxInitials";
             this.checkedListBoxInitials.Size = new System.Drawing.Size(249, 225);
             this.checkedListBoxInitials.TabIndex = 3;
@@ -81,9 +81,9 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(420, 137);
+            this.richTextBox1.Location = new System.Drawing.Point(404, 137);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(268, 279);
+            this.richTextBox1.Size = new System.Drawing.Size(323, 279);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "";
             // 
@@ -91,7 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(879, 508);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.checkedListBoxInitials);
             this.Controls.Add(this.comboBoxGroups);
